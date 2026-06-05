@@ -26,54 +26,31 @@
     justify-content: space-between;
     flex-shrink: 0;
   }
-  .header-left { display: flex; align-items: center; gap: 16px; }
   h1 { font-size: 18px; font-weight: 700; color: #fff; letter-spacing: 0.5px; }
   .subtitle { font-size: 12px; color: #888; margin-top: 2px; }
   .stats { display: flex; gap: 20px; font-size: 12px; color: #aaa; }
   .stat-item span { color: #4af; font-weight: 600; font-size: 14px; }
   .main { display: flex; flex: 1; overflow: hidden; }
-  #map-container {
-    flex: 1;
-    position: relative;
-    overflow: hidden;
-    background: #0f1117;
-  }
+  #map-container { flex: 1; position: relative; overflow: hidden; background: #0f1117; }
   svg { width: 100%; height: 100%; display: block; }
-  .county {
-    stroke: #1a1d27;
-    stroke-width: 0.3px;
-    cursor: pointer;
-    transition: opacity 0.1s;
-  }
+  .county { stroke: #1a1d27; stroke-width: 0.3px; cursor: pointer; transition: opacity 0.1s; }
   .county:hover { opacity: 0.75; stroke-width: 1.2px; stroke: #fff; }
   .county.unassigned { fill: #2a2d3a; }
   .state-border { fill: none; stroke: #555; stroke-width: 0.8px; pointer-events: none; }
   #sidebar {
-    width: 260px;
-    background: #1a1d27;
+    width: 260px; background: #1a1d27;
     border-left: 1px solid #2a2e40;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    flex-shrink: 0;
+    display: flex; flex-direction: column; overflow: hidden; flex-shrink: 0;
   }
   #sidebar-header {
-    padding: 12px 14px;
-    border-bottom: 1px solid #2a2e40;
-    font-size: 12px;
-    font-weight: 600;
-    color: #aaa;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    padding: 12px 14px; border-bottom: 1px solid #2a2e40;
+    font-size: 12px; font-weight: 600; color: #aaa;
+    text-transform: uppercase; letter-spacing: 1px;
   }
   #search-box {
-    margin: 10px 12px;
-    padding: 7px 10px;
-    background: #0f1117;
-    border: 1px solid #2a2e40;
-    border-radius: 4px;
-    color: #e0e0e0;
-    font-size: 12px;
+    margin: 10px 12px; padding: 7px 10px;
+    background: #0f1117; border: 1px solid #2a2e40;
+    border-radius: 4px; color: #e0e0e0; font-size: 12px;
     width: calc(100% - 24px);
   }
   #search-box:focus { outline: none; border-color: #2a7fff; }
@@ -82,13 +59,8 @@
   #store-list::-webkit-scrollbar-track { background: #0f1117; }
   #store-list::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
   .store-item {
-    display: flex;
-    align-items: center;
-    padding: 6px 14px;
-    cursor: pointer;
-    border-radius: 3px;
-    margin: 1px 6px;
-    transition: background 0.15s;
+    display: flex; align-items: center; padding: 6px 14px;
+    cursor: pointer; border-radius: 3px; margin: 1px 6px; transition: background 0.15s;
   }
   .store-item:hover { background: #252838; }
   .store-item.active { background: #1e2b4a; }
@@ -98,99 +70,51 @@
   .store-id { font-size: 10px; color: #666; }
   .store-count { font-size: 10px; color: #888; margin-left: 4px; flex-shrink: 0; }
   #tooltip {
-    position: absolute;
-    background: rgba(15,17,23,0.95);
-    border: 1px solid #2a7fff;
-    border-radius: 5px;
-    padding: 8px 12px;
-    font-size: 12px;
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.1s;
-    z-index: 100;
-    max-width: 220px;
+    position: absolute; background: rgba(15,17,23,0.95);
+    border: 1px solid #2a7fff; border-radius: 5px; padding: 8px 12px;
+    font-size: 12px; pointer-events: none; opacity: 0;
+    transition: opacity 0.1s; z-index: 100; max-width: 220px;
   }
   #tooltip.visible { opacity: 1; }
   #tooltip .tip-county { font-weight: 700; color: #fff; font-size: 13px; }
   #tooltip .tip-state { color: #888; font-size: 11px; }
   #tooltip .tip-store { color: #4af; margin-top: 4px; font-size: 11.5px; }
   #tooltip .tip-unassigned { color: #888; margin-top: 4px; font-style: italic; }
-  .controls {
-    position: absolute;
-    top: 12px;
-    left: 12px;
-    display: flex;
-    gap: 6px;
-    z-index: 10;
-  }
+  .controls { position: absolute; top: 12px; left: 12px; display: flex; gap: 6px; z-index: 10; }
   .ctrl-btn {
-    background: rgba(26,29,39,0.92);
-    border: 1px solid #2a2e40;
-    color: #aaa;
-    padding: 6px 10px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: all 0.15s;
+    background: rgba(26,29,39,0.92); border: 1px solid #2a2e40;
+    color: #aaa; padding: 6px 10px; border-radius: 4px;
+    cursor: pointer; font-size: 14px; transition: all 0.15s;
   }
   .ctrl-btn:hover { background: #252838; color: #fff; border-color: #2a7fff; }
   .legend-pill {
-    position: absolute;
-    bottom: 12px;
-    left: 12px;
-    background: rgba(26,29,39,0.92);
-    border: 1px solid #2a2e40;
-    border-radius: 5px;
-    padding: 8px 12px;
-    font-size: 11px;
-    display: flex;
-    gap: 14px;
+    position: absolute; bottom: 12px; left: 12px;
+    background: rgba(26,29,39,0.92); border: 1px solid #2a2e40;
+    border-radius: 5px; padding: 8px 12px; font-size: 11px;
+    display: flex; gap: 14px;
   }
   .leg-item { display: flex; align-items: center; gap: 5px; color: #aaa; }
   .leg-swatch { width: 12px; height: 12px; border-radius: 2px; }
   #gaps-toggle {
-    position: absolute;
-    top: 12px;
-    right: 12px;
-    background: rgba(26,29,39,0.92);
-    border: 1px solid #2a2e40;
-    border-radius: 4px;
-    padding: 6px 12px;
-    font-size: 11px;
-    color: #aaa;
-    cursor: pointer;
-    z-index: 10;
-    user-select: none;
-    transition: all 0.15s;
+    position: absolute; top: 12px; right: 12px;
+    background: rgba(26,29,39,0.92); border: 1px solid #2a2e40;
+    border-radius: 4px; padding: 6px 12px; font-size: 11px;
+    color: #aaa; cursor: pointer; z-index: 10; user-select: none; transition: all 0.15s;
   }
   #gaps-toggle:hover { border-color: #2a7fff; color: #fff; }
   #gaps-toggle.active { border-color: #f90; color: #f90; background: rgba(255,153,0,0.08); }
   #loading {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: #888;
-    font-size: 14px;
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center; color: #888; font-size: 14px;
   }
   #loading .spinner {
-    width: 32px;
-    height: 32px;
-    border: 3px solid #2a2e40;
-    border-top-color: #2a7fff;
-    border-radius: 50%;
-    animation: spin 0.8s linear infinite;
-    margin: 0 auto 12px;
+    width: 32px; height: 32px; border: 3px solid #2a2e40;
+    border-top-color: #2a7fff; border-radius: 50%;
+    animation: spin 0.8s linear infinite; margin: 0 auto 12px;
   }
   @keyframes spin { to { transform: rotate(360deg); } }
-  #last-updated {
-    position: absolute;
-    bottom: 12px;
-    right: 12px;
-    font-size: 10px;
-    color: #555;
-  }
+  #last-updated { position: absolute; bottom: 12px; right: 12px; font-size: 10px; color: #555; }
   .highlighted .county.assigned:not(.highlighted-county) { opacity: 0.1; }
   .gaps-mode .county.assigned { opacity: 0.08; }
 </style>
@@ -198,11 +122,9 @@
 <body>
 
 <header>
-  <div class="header-left">
-    <div>
-      <h1>TrailersPlus - County Coverage Map</h1>
-      <div class="subtitle">Data live from Google Sheets - hover counties for details, click to highlight a store territory</div>
-    </div>
+  <div>
+    <h1>TrailersPlus - County Coverage Map</h1>
+    <div class="subtitle">Live from Google Sheets - hover counties for details, click to highlight a store territory</div>
   </div>
   <div class="stats">
     <div class="stat-item">Assigned Counties<br><span id="stat-assigned">-</span></div>
@@ -214,8 +136,8 @@
 <div class="main">
   <div id="map-container">
     <div class="controls">
-      <button class="ctrl-btn" id="zoom-in" title="Zoom in">+</button>
-      <button class="ctrl-btn" id="zoom-out" title="Zoom out">-</button>
+      <button class="ctrl-btn" id="zoom-in">+</button>
+      <button class="ctrl-btn" id="zoom-out">-</button>
       <button class="ctrl-btn" id="zoom-reset" title="Reset view">&#8962;</button>
     </div>
     <div id="gaps-toggle">&#9650; Show Gaps Only</div>
@@ -232,9 +154,8 @@
       </div>
     </div>
     <div id="last-updated"></div>
-    <div id="loading"><div class="spinner"></div>Loading map data...</div>
+    <div id="loading"><div class="spinner"></div><div id="loading-msg">Loading map data...</div></div>
   </div>
-
   <div id="sidebar">
     <div id="sidebar-header">Store Territories</div>
     <input type="text" id="search-box" placeholder="Search by store name or ID..." />
@@ -244,10 +165,10 @@
 
 <script>
 // ── CONFIG ────────────────────────────────────────────────────────────────────
-// To point this map at a different sheet, just update this URL.
-// In Google Sheets: File > Share > Publish to web > Sheet1 > CSV > Publish
-const CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTKJZfAByomCTw6SBAAtrZvEOGQCeOpB17GDQU7j967dqe0KySdgude-SrF4iZa1RCbEDfntIx4TE7A/pub?gid=0&single=true&output=csv';
-const TOPO_URL = 'https://cdn.jsdelivr.net/npm/us-atlas@3/counties-10m.json';
+const SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTKJZfAByomCTw6SBAAtrZvEOGQCeOpB17GDQU7j967dqe0KySdgude-SrF4iZa1RCbEDfntIx4TE7A/pub?gid=0&single=true&output=csv';
+const TOPO_URL      = 'https://cdn.jsdelivr.net/npm/us-atlas@3/counties-10m.json';
+// allorigins proxies the request server-side, bypassing any browser CORS issue
+const PROXY_URL     = 'https://api.allorigins.win/raw?url=';
 // ─────────────────────────────────────────────────────────────────────────────
 
 const STATE_FIPS = {
@@ -259,102 +180,116 @@ const STATE_FIPS = {
   'SC':'45','SD':'46','TN':'47','TX':'48','UT':'49','VT':'50','VA':'51','WA':'53',
   'WV':'54','WI':'55','WY':'56'
 };
-// Reverse: FIPS -> abbrev
 const FIPS_STATE = Object.fromEntries(Object.entries(STATE_FIPS).map(([k,v]) => [v,k]));
+
+// ── FETCH WITH FALLBACK ───────────────────────────────────────────────────────
+// Try direct fetch first. If it fails (CORS, redirect issue), retry via proxy.
+async function fetchCSV(url) {
+  setLoadingMsg('Fetching sheet data...');
+  try {
+    const r = await fetch(url, { redirect: 'follow' });
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    const text = await r.text();
+    // Sanity check - should start with a header row, not HTML
+    if (text.trim().startsWith('<')) throw new Error('Got HTML instead of CSV');
+    console.log('CSV loaded directly');
+    return text;
+  } catch (e) {
+    console.warn('Direct fetch failed (' + e.message + '), trying proxy...');
+    setLoadingMsg('Retrying via proxy...');
+    const r2 = await fetch(PROXY_URL + encodeURIComponent(url));
+    if (!r2.ok) throw new Error('Proxy fetch failed: HTTP ' + r2.status);
+    const text = await r2.text();
+    if (text.trim().startsWith('<')) throw new Error('Proxy returned HTML - check sheet is published');
+    console.log('CSV loaded via proxy');
+    return text;
+  }
+}
+
+function setLoadingMsg(msg) {
+  const el = document.getElementById('loading-msg');
+  if (el) el.textContent = msg;
+}
 
 // ── CSV PARSER ────────────────────────────────────────────────────────────────
 function parseCSV(text) {
   const lines = text.trim().split('\n');
-  const headers = lines[0].split(',').map(h => h.trim().replace(/^"|"$/g,''));
+  const headers = lines[0].split(',').map(h => h.trim().replace(/^"|"$/g, ''));
   return lines.slice(1).map(line => {
-    // Handle quoted fields with commas
     const cols = [];
     let cur = '', inQ = false;
-    for(let i = 0; i < line.length; i++) {
+    for (let i = 0; i < line.length; i++) {
       const c = line[i];
-      if(c === '"') { inQ = !inQ; }
-      else if(c === ',' && !inQ) { cols.push(cur.trim()); cur = ''; }
+      if (c === '"') { inQ = !inQ; }
+      else if (c === ',' && !inQ) { cols.push(cur.trim()); cur = ''; }
       else { cur += c; }
     }
     cols.push(cur.trim());
     const row = {};
-    headers.forEach((h, i) => row[h] = (cols[i] || '').replace(/^"|"$/g,'').trim());
+    headers.forEach((h, i) => row[h] = (cols[i] || '').replace(/^"|"$/g, '').trim());
     return row;
   }).filter(r => r.County && r.State);
 }
 
-// ── COLOR GENERATOR ───────────────────────────────────────────────────────────
-// Deterministic color from store ID string so colors stay stable across reloads
+// ── COLOR ─────────────────────────────────────────────────────────────────────
 function storeColor(storeId) {
   let hash = 0;
-  for(let i = 0; i < storeId.length; i++) {
+  for (let i = 0; i < storeId.length; i++) {
     hash = ((hash << 5) - hash) + storeId.charCodeAt(i);
     hash |= 0;
   }
-  const hue = Math.abs(hash) % 360;
-  const sat = 55 + (Math.abs(hash >> 8) % 25);
+  const hue   = Math.abs(hash) % 360;
+  const sat   = 55 + (Math.abs(hash >> 8)  % 25);
   const light = 42 + (Math.abs(hash >> 16) % 20);
   return `hsl(${hue},${sat}%,${light}%)`;
 }
 
-// ── NAME NORMALIZATION ────────────────────────────────────────────────────────
+// ── NORMALIZE ─────────────────────────────────────────────────────────────────
 function normalize(str) {
   return (str || '').toUpperCase()
-    .replace(/ COUNTY$/,'').replace(/ PARISH$/,'').replace(/ BOROUGH$/,'')
-    .replace(/ CENSUS AREA$/,'').replace(/ MUNICIPALITY$/,'')
-    .replace(/ CITY AND BOROUGH$/,'').replace(/ CITY$/,'')
+    .replace(/ COUNTY$/, '').replace(/ PARISH$/, '').replace(/ BOROUGH$/, '')
+    .replace(/ CENSUS AREA$/, '').replace(/ MUNICIPALITY$/, '')
+    .replace(/ CITY AND BOROUGH$/, '').replace(/ CITY$/, '')
     .trim();
 }
 
 // ── APP STATE ─────────────────────────────────────────────────────────────────
 let selectedStore = null;
-let showGapsOnly = false;
-let storeData = {};     // storeId -> { name, color, count }
-let nameLookup = {};    // "NORMALIZEDCOUNTY_STATE" -> storeId
-let storeList = [];
+let showGapsOnly  = false;
+let storeData     = {};
+let nameLookup    = {};
+let storeList     = [];
 
-// ── BUILD LOOKUP FROM CSV ROWS ────────────────────────────────────────────────
 function buildLookup(rows) {
-  nameLookup = {};
-  storeData = {};
-  storeList = [];
-  const storeSeen = new Set();
-
+  nameLookup = {}; storeData = {}; storeList = [];
+  const seen = new Set();
   rows.forEach(row => {
-    const county = (row.County || '').toUpperCase().trim();
-    const state  = (row.State  || '').toUpperCase().trim();
-    const storeId = (row.Assigned_StoreID || '').trim();
-    const storeName = (row.StoreName || '').trim();
-    if(!county || !state || !storeId) return;
-
-    // Store registry
-    if(!storeSeen.has(storeId)) {
-      storeSeen.add(storeId);
+    const county    = (row.County            || '').toUpperCase().trim();
+    const state     = (row.State             || '').toUpperCase().trim();
+    const storeId   = (row.Assigned_StoreID  || '').trim();
+    const storeName = (row.StoreName         || '').trim();
+    if (!county || !state || !storeId) return;
+    if (!seen.has(storeId)) {
+      seen.add(storeId);
       storeList.push(storeId);
       storeData[storeId] = { name: storeName || storeId, color: storeColor(storeId), count: 0 };
     }
     storeData[storeId].count++;
-
-    // Primary key: normalized county + state
-    const normKey = normalize(county) + '_' + state;
-    nameLookup[normKey] = storeId;
-    // Also store raw key as fallback
-    nameLookup[county + '_' + state] = storeId;
+    nameLookup[normalize(county) + '_' + state] = storeId;
+    nameLookup[county + '_' + state]             = storeId;
   });
-
-  // Sort store list alphabetically by name
   storeList.sort((a, b) => storeData[a].name.localeCompare(storeData[b].name));
 }
 
 function getStoreForCounty(d) {
-  if(!d || !d.properties) return null;
-  const name = d.properties.name || '';
+  if (!d || !d.properties) return null;
+  const name  = d.properties.name || '';
   const fips2 = String(d.id || '').substring(0, 2).padStart(2, '0');
   const state = FIPS_STATE[fips2];
-  if(!state) return null;
-  const norm = normalize(name) + '_' + state;
-  const raw  = name.toUpperCase() + '_' + state;
-  return nameLookup[norm] || nameLookup[raw] || null;
+  if (!state) return null;
+  return nameLookup[normalize(name) + '_' + state]
+      || nameLookup[name.toUpperCase() + '_' + state]
+      || null;
 }
 
 // ── SIDEBAR ───────────────────────────────────────────────────────────────────
@@ -367,7 +302,7 @@ function renderSidebar(filter) {
   });
   container.innerHTML = visible.map(sid => {
     const d = storeData[sid];
-    return `<div class="store-item${selectedStore===sid?' active':''}" data-store="${sid}" onclick="selectStore('${sid}')">
+    return `<div class="store-item${selectedStore === sid ? ' active' : ''}" data-store="${sid}" onclick="selectStore('${sid}')">
       <div class="store-dot" style="background:${d.color}"></div>
       <div class="store-info">
         <div class="store-name">${d.name}</div>
@@ -386,16 +321,11 @@ function selectStore(sid) {
 
 function applyHighlight() {
   const svg = d3.select('#map');
-  const isGaps = showGapsOnly;
-  const isSel  = !!selectedStore;
-
-  // Remove all mode classes first
-  svg.classed('highlighted', isSel && !isGaps);
-  svg.classed('gaps-mode', isGaps);
-
-  d3.selectAll('.county').classed('highlighted-county', d => {
-    return isSel && getStoreForCounty(d) === selectedStore;
-  });
+  svg.classed('highlighted', !!selectedStore && !showGapsOnly);
+  svg.classed('gaps-mode', showGapsOnly);
+  d3.selectAll('.county').classed('highlighted-county', d =>
+    !!selectedStore && getStoreForCounty(d) === selectedStore
+  );
 }
 
 document.getElementById('search-box').addEventListener('input', e => renderSidebar(e.target.value));
@@ -409,9 +339,9 @@ document.getElementById('gaps-toggle').addEventListener('click', function() {
   applyHighlight();
 });
 
-// ── MAP SETUP ─────────────────────────────────────────────────────────────────
-const svg = d3.select('#map');
-const mapContainer = document.getElementById('map-container');
+// ── MAP ───────────────────────────────────────────────────────────────────────
+const svg    = d3.select('#map');
+const mapEl  = document.getElementById('map-container');
 const tooltip = document.getElementById('tooltip');
 
 const projection = d3.geoAlbersUsa().scale(1200).translate([800, 450]);
@@ -421,25 +351,18 @@ const zoom = d3.zoom()
   .scaleExtent([0.5, 14])
   .on('zoom', e => g.attr('transform', e.transform));
 svg.call(zoom);
-
 const g = svg.append('g');
 
-document.getElementById('zoom-in').addEventListener('click', () =>
-  svg.transition().duration(280).call(zoom.scaleBy, 1.5));
-document.getElementById('zoom-out').addEventListener('click', () =>
-  svg.transition().duration(280).call(zoom.scaleBy, 0.67));
-document.getElementById('zoom-reset').addEventListener('click', () =>
-  svg.transition().duration(380).call(zoom.transform, d3.zoomIdentity));
+document.getElementById('zoom-in').addEventListener('click',    () => svg.transition().duration(280).call(zoom.scaleBy, 1.5));
+document.getElementById('zoom-out').addEventListener('click',   () => svg.transition().duration(280).call(zoom.scaleBy, 0.67));
+document.getElementById('zoom-reset').addEventListener('click', () => svg.transition().duration(380).call(zoom.transform, d3.zoomIdentity));
 
-// ── RENDER MAP ────────────────────────────────────────────────────────────────
 function renderMap(us) {
   const counties = topojson.feature(us, us.objects.counties);
   const states   = topojson.mesh(us, us.objects.states, (a, b) => a !== b);
 
-  let assignedCount = 0;
-  let unassignedCount = 0;
+  let assigned = 0, unassigned = 0;
 
-  // Remove any previously rendered counties (for refresh)
   g.selectAll('.county').remove();
   g.selectAll('.state-border').remove();
 
@@ -449,8 +372,8 @@ function renderMap(us) {
     .append('path')
     .attr('class', d => {
       const store = getStoreForCounty(d);
-      if(store) { assignedCount++; return 'county assigned'; }
-      unassignedCount++;
+      if (store) { assigned++; return 'county assigned'; }
+      unassigned++;
       return 'county unassigned';
     })
     .attr('d', path)
@@ -461,36 +384,35 @@ function renderMap(us) {
     .on('mousemove', function(event, d) {
       const store = getStoreForCounty(d);
       const name  = d.properties.name || 'Unknown';
-      const fips2 = String(d.id || '').substring(0,2).padStart(2,'0');
+      const fips2 = String(d.id || '').substring(0, 2).padStart(2, '0');
       const state = FIPS_STATE[fips2] || fips2;
       let html = `<div class="tip-county">${name}</div><div class="tip-state">${state}</div>`;
-      if(store) {
-        const sd = storeData[store];
-        html += `<div class="tip-store">&#9679; ${store}<br>${sd ? sd.name : ''}</div>`;
+      if (store) {
+        html += `<div class="tip-store">&#9679; ${store}<br>${storeData[store]?.name || ''}</div>`;
       } else {
         html += `<div class="tip-unassigned">Not assigned to any store</div>`;
       }
       tooltip.innerHTML = html;
       tooltip.classList.add('visible');
-      const rect = mapContainer.getBoundingClientRect();
+      const rect = mapEl.getBoundingClientRect();
       let x = event.clientX - rect.left + 14;
-      let y = event.clientY - rect.top + 14;
-      if(x + 230 > rect.width)  x = event.clientX - rect.left - 234;
-      if(y + 90  > rect.height) y = event.clientY - rect.top  - 90;
+      let y = event.clientY - rect.top  + 14;
+      if (x + 230 > rect.width)  x = event.clientX - rect.left - 234;
+      if (y + 90  > rect.height) y = event.clientY - rect.top  - 90;
       tooltip.style.left = x + 'px';
       tooltip.style.top  = y + 'px';
     })
     .on('mouseleave', () => tooltip.classList.remove('visible'))
     .on('click', function(event, d) {
       const store = getStoreForCounty(d);
-      if(!store) return;
+      if (!store) return;
       showGapsOnly = false;
       document.getElementById('gaps-toggle').classList.remove('active');
       document.getElementById('gaps-toggle').textContent = '▲ Show Gaps Only';
       selectStore(store);
       setTimeout(() => {
         const el = document.querySelector(`.store-item[data-store="${store}"]`);
-        if(el) el.scrollIntoView({ behavior:'smooth', block:'center' });
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }, 50);
     });
 
@@ -499,39 +421,41 @@ function renderMap(us) {
     .attr('class', 'state-border')
     .attr('d', path);
 
-  document.getElementById('stat-assigned').textContent   = assignedCount.toLocaleString();
-  document.getElementById('stat-unassigned').textContent = unassignedCount.toLocaleString();
+  document.getElementById('stat-assigned').textContent   = assigned.toLocaleString();
+  document.getElementById('stat-unassigned').textContent = unassigned.toLocaleString();
   document.getElementById('stat-stores').textContent     = storeList.length.toLocaleString();
-  document.getElementById('last-updated').textContent =
-    'Data loaded: ' + new Date().toLocaleString();
-  document.getElementById('loading').style.display = 'none';
+  document.getElementById('last-updated').textContent    = 'Data loaded: ' + new Date().toLocaleString();
+  document.getElementById('loading').style.display       = 'none';
 
   renderSidebar();
   applyHighlight();
 }
 
-// ── LOAD DATA ─────────────────────────────────────────────────────────────────
-// Fetch both CSV and TopoJSON in parallel, render when both are ready
+// ── BOOT ──────────────────────────────────────────────────────────────────────
+setLoadingMsg('Loading map boundaries...');
 Promise.all([
-  fetch(CSV_URL).then(r => {
-    if(!r.ok) throw new Error('CSV fetch failed: ' + r.status);
-    return r.text();
-  }),
-  fetch(TOPO_URL).then(r => {
-    if(!r.ok) throw new Error('TopoJSON fetch failed: ' + r.status);
-    return r.json();
-  })
+  fetchCSV(SHEET_CSV_URL),
+  fetch(TOPO_URL).then(r => { if (!r.ok) throw new Error('TopoJSON fetch failed'); return r.json(); })
 ])
 .then(([csvText, us]) => {
   const rows = parseCSV(csvText);
+  if (!rows.length) throw new Error('CSV parsed 0 rows - check sheet is published as CSV');
   buildLookup(rows);
   renderMap(us);
 })
 .catch(err => {
   document.getElementById('loading').innerHTML =
-    `<div style="color:#f66;font-size:13px;">Failed to load data.<br><small>${err.message}</small><br><br>
-     <small style="color:#666">Check that your Google Sheet is published<br>and this page has internet access.</small></div>`;
-  console.error(err);
+    `<div style="color:#f66;font-size:13px;line-height:1.6">
+      Failed to load data.<br>
+      <small style="color:#aaa">${err.message}</small><br><br>
+      <small style="color:#666">
+        1. Open your Google Sheet<br>
+        2. File > Share > Publish to web<br>
+        3. Confirm Sheet1 / CSV is selected<br>
+        4. Click Publish
+      </small>
+    </div>`;
+  console.error('Map load error:', err);
 });
 </script>
 </body>
